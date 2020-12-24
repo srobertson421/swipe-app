@@ -6,22 +6,39 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="description" content="Web site created using create-snowpack-app" />
     <link rel="stylesheet" type="text/css" href="/index.css" />
-    <title>Snowpack App</title>
+    <title>Swiper App</title>
   </head>
   <body>
-    <img id="img" src="/logo.svg" />
-    <canvas id="canvas"></canvas>
+    <!-- Slider main container -->
+    <div id="app" class="swiper-container">
+      <!-- Additional required wrapper -->
+      <div class="swiper-wrapper">
+        <!-- Slides -->
+        <div role="button" style="background-color: aquamarine;" class="swiper-slide">
+          <h1>Home</h1>
+        </div>
+        <div role="button" style="background-color: blueviolet;" class="swiper-slide">
+          <h1>Profile</h1>
+        </div>
+        <div role="button" style="background-color: coral;" class="swiper-slide">
+          <h1>Settings</h1>
+        </div>
+      </div>
+      <!-- If we need pagination -->
+      <!-- <div class="swiper-pagination"></div> -->
+    </div>
+    <nav id="main-nav">
+      <div class="nav-link">
+        <img alt="home-icon" src="https://icongr.am/entypo/home.svg?size=35&color=000000" />
+      </div>
+      <div class="nav-link">
+        <img alt="home-icon" src="https://icongr.am/entypo/user.svg?size=35&color=000000" />
+      </div>
+      <div class="nav-link">
+        <img alt="home-icon" src="https://icongr.am/entypo/cog.svg?size=35&color=000000" />
+      </div>
+    </nav>
     <noscript>You need to enable JavaScript to run this app.</noscript>
     <script type="module" src="/dist/index.js"></script>
-    <!--
-      This HTML file is a template.
-      If you open it directly in the browser, you will see an empty page.
-
-      You can add webfonts, meta tags, or analytics to this file.
-      The build step will place the bundled scripts into the <body> tag.
-
-      To begin the development, run `npm start` or `yarn start`.
-      To create a production bundle, use `npm run build` or `yarn build`.
-    -->
   </body>
 </html>

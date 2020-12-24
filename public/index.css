@@ -1,14 +1,67 @@
-#img {
-  display: block;
-  margin: auto;
-  height: 128px;
-  width: 128px;
-  padding: 2rem;
+* {
+  box-sizing: border-box;
 }
 
-#canvas {
-  display: block;
-  margin: 2rem auto;
-  width: 540px;
-  height: 540px;
+:root {
+  --nav-height: 45px;
+  --base-font-size: 16px;
+}
+
+html {
+  height: 100%;
+}
+
+body {
+  height: 100%;
+}
+
+html,body {
+  margin: 0;
+  font-size: var(--base-font-size);
+}
+
+#main-nav {
+  width: 100%;
+  height: var(--nav-height);
+  display: flex;
+  flex-direction: row;
+  background-color: black;
+}
+
+#main-nav .nav-link {
+  display: flex;
+  flex: 1;
+  justify-content: center;
+  align-items: center;
+}
+
+.swiper-container {
+  position: relative;
+  overflow: hidden;
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  height: calc(100% - var(--nav-height));
+}
+
+.swiper-wrapper {
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.swiper-slide {
+  position: relative;
+  display: flex;
+  flex-shrink: 0;
+  width: 100%;
+  height: 100%;
+  cursor: grab;
+  justify-content: center;
+  overflow: scroll;
+}
+
+.nav-link.active {
+  color: red;
 }
