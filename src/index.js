@@ -2,8 +2,33 @@ import Swiper, { SwiperPluginLazyload } from 'tiny-swiper';
 
 Swiper.use([ SwiperPluginLazyload ]);
 
+const routes = [
+  '/',
+  '/profile',
+  '/settings'
+];
+
+function getSlideIndexFromHash() {
+  const path = window.location.hash.split('#')[1];
+
+  if(!path) {
+    window.location.hash = '#/';
+    return 0;
+  }
+
+  const index = routes.findIndex(route => route === path);
+
+  if(!index) {
+    window.location.hash = '#/';
+    return 0;
+  }
+
+  return index;
+}
+
 const swiper = new Swiper('#app', {
-  loop: true
+  loop: true,
+  initialSlide: getSlideIndexFromHash()
 });
 
 function createImage(url) {
@@ -43,5 +68,6 @@ function setActiveView(currentView) {
 setActiveView(swiper.state.index);
 
 swiper.on('before-slide', (currentIndex, state, nextIndex) => {
+  window.location.hash = `#${routes[nextIndex]}`
   setActiveView(nextIndex);
 });
